@@ -23,3 +23,4 @@ npm install
 npm run dev     # Runs dev server on port 5175
 npm run build   # Compiles standalone MFE bundle
 ```
+

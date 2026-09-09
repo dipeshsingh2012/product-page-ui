@@ -172,3 +172,4 @@ export const ProductPageFragment: React.FC<ProductPageFragmentProps> = ({
     </div>
   );
 };
+

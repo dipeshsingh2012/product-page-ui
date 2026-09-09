@@ -30,3 +30,4 @@ export async function fetchProductDetails(id: string): Promise<ProductDetail> {
     description: 'Automated touchscreen espresso machine with integrated precision grinder and automated microfoam texturing.',
   };
 }
+

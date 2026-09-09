@@ -16,3 +16,4 @@ export interface ProductDetail {
   cutout_url?: string;
   description?: string;
 }
+
