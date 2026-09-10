@@ -173,3 +173,4 @@ export const ProductPageFragment: React.FC<ProductPageFragmentProps> = ({
   );
 };
 
+export default ProductPageFragment;
