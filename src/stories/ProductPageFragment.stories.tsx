@@ -1,7 +1,7 @@
-import React from 'react';
+
 import type { Meta, StoryObj } from '@storybook/react';
 import { ProductPageFragment } from '../components/ProductPageFragment';
-import { Ruler, ShieldCheck } from 'lucide-react';
+import { Ruler } from 'lucide-react';
 
 const meta: Meta<typeof ProductPageFragment> = {
   title: 'Fragments/ProductPageFragment',
