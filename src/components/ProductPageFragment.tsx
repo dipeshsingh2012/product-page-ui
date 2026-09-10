@@ -5,7 +5,9 @@ import {
   ProtonMetricBox,
   ProtonStatusBadge,
   ProtonButton,
+  ProtonSpinner,
 } from '@dipesh.singh/proton/react';
+import { PriceDisplay, formatPrice } from '@dipesh.singh/commerce-ui';
 import { fetchProductDetails } from '../api';
 import { ProductDetail } from '../types';
 
@@ -35,8 +37,9 @@ export const ProductPageFragment: React.FC<ProductPageFragmentProps> = ({
 
   if (!product) {
     return (
-      <div className="min-h-[400px] flex items-center justify-center">
-        <div className="w-8 h-8 border-3 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-[400px] flex flex-col items-center justify-center space-y-2">
+        <ProtonSpinner size="lg" variant="coffee" label="Loading product..." />
+        <p className="text-xs text-slate-500 font-medium">Loading product specifications...</p>
       </div>
     );
   }
@@ -103,9 +106,7 @@ export const ProductPageFragment: React.FC<ProductPageFragmentProps> = ({
               </div>
 
               <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-3xl font-black text-slate-900">
-                  ${product.price.toFixed(2)}
-                </span>
+                <PriceDisplay cents={Math.round(product.price * 100)} size="xl" />
                 <ProtonStatusBadge status="success" pulse label="In Stock & Ready to Ship" size="sm" />
               </div>
 
@@ -137,7 +138,7 @@ export const ProductPageFragment: React.FC<ProductPageFragmentProps> = ({
                   startIcon={<ShoppingBag style={{ width: 16, height: 16 }} />}
                   onClick={handleAdd}
                 >
-                  {addedAnimation ? 'Added to Cart!' : `Add to Cart — $${product.price.toFixed(2)}`}
+                  {addedAnimation ? 'Added to Cart!' : `Add to Cart — ${formatPrice(Math.round(product.price * 100))}`}
                 </ProtonButton>
               </div>
 
