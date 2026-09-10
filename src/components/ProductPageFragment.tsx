@@ -5,7 +5,7 @@ import {
   ProtonMetricBox,
   ProtonStatusBadge,
   ProtonButton,
-} from '@dipeshsingh2012/proton/react';
+} from '@dipesh.singh/proton/react';
 import { fetchProductDetails } from '../api';
 import { ProductDetail } from '../types';
 
